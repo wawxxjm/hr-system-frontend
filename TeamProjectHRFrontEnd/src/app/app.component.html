@@ -1,0 +1,10 @@
+<app-login *ngIf="!isRegistering"></app-login>
+<hr>
+<div *ngIf="!isRegistering">
+    <p>Register with a token:</p>
+    <input type="text" [(ngModel)]="token">
+    <button (click)="submitToken()">Submit</button>
+</div>
+<app-regi-with-token *ngIf="isRegistering"></app-regi-with-token>
+
+<!-- <router-outlet></router-outlet> -->

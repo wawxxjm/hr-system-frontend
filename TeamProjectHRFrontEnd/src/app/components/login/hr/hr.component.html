@@ -1,0 +1,11 @@
+<p>hr navigation bar</p>
+<button (click)="switchDisplay('personalInfo')">personalInfo</button>
+<button (click)="switchDisplay('allVisaStatus')">visaStatus</button>
+<button (click)="switchDisplay('hire')">visaStatus</button>
+<button (click)="switchDisplay('Housing')">Housing</button>
+
+<app-personal-info *ngIf="(nowShowing=='personalInfo')"></app-personal-info>
+<app-all-visa-status *ngIf="(nowShowing=='allVisaStatus')"></app-all-visa-status>
+<app-hire *ngIf="(nowShowing=='hire')"></app-hire>
+<app-house-management *ngIf="(nowShowing=='Housing')"></app-house-management>
+<hr>

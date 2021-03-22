@@ -1,0 +1,14 @@
+<p>login page</p>
+
+<div *ngIf="(userIdentity==='notLogin')">
+  <input type="text" [(ngModel)]="uname">
+  <br>
+  <input type="text" [(ngModel)]="pwd">
+  <br>
+  <button (click)="checkLoginInfo()">Login</button>
+</div>
+<button *ngIf="(userIdentity!=='notLogin')" (click)="logOut()">Logout</button>
+
+<app-normal-user *ngIf="(userIdentity=='normal')"></app-normal-user>
+
+<app-hr *ngIf="(userIdentity=='hr')"></app-hr>
