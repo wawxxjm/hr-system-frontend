@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { HireComponent } from './components/login/hr/hire/hire.component';
 import { HouseManagementComponent } from './components/login/hr/house-management/house-management.component';
 import { PersonalVisaStatusComponent } from './components/login/normal-user/personal-visa-status/personal-visa-status.component';
 import { PersonalHousingComponent } from './components/login/normal-user/personal-housing/personal-housing.component';
+import { HRComponentComponent } from './components/hrcomponent/hrcomponent.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +29,14 @@ import { PersonalHousingComponent } from './components/login/normal-user/persona
     HireComponent,
     HouseManagementComponent,
     PersonalVisaStatusComponent,
-    PersonalHousingComponent
+    PersonalHousingComponent,
+    HRComponentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
