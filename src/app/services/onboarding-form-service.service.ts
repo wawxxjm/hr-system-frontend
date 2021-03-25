@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class OnboardingFormServiceService {
 
-  url : string;
+  url : string = "/api/";
 
   constructor(private http : HttpClient) { }
 
