@@ -1,5 +1,6 @@
-export class OnboardingForm {
+import { FormArray } from "@angular/forms";
 
+export class OnboardingForm {
     firstName: string;
     lastName: string;
     middleName: string;
@@ -31,6 +32,8 @@ export class OnboardingForm {
     referAddress: string;
     referEmail: string;
     referRelationship: string;
+    emergencyContacts: FormArray;
+
 
     constructor() {
     }

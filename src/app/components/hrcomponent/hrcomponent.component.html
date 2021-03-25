@@ -1,4 +1,8 @@
 <p>hrcomponent works!</p>
+    <!-- Fonts and icons    
+<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet">
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet"> -->
+
 <form [formGroup] = "onboardingForm" (ngSubmit)="onSubmit(onboardingForm)">
     <label for="firstName">First Name(*):</label><br>
     <input type="text" name="firstName" formControlName="firstName" required> <br><br>
@@ -37,7 +41,7 @@
     <input type="text" name="carColor" formControlName="carColor"><br><br>
 
     <label for="email">Email:</label><br>
-    <input type="email" name="email" value="PREFILLED@gmail.com" formControlName="email" disabled><br><br>
+    <input type="email" name="email" value= {{email}}  disabled><br><br>
 
     <label for="SSN">SSN(*):</label><br>
     <input type="tel" name="SSN" placeholder="123-45-7890" pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}" formControlName="SSN"
@@ -81,7 +85,7 @@
     <input type="date" name="workAuthOtherEnd" formControlName="workAuthOtherEnd" required><br><br>
 </label>
 
-<div>work authorization : {{onboardingForm.controls["SSN"].value}}</div>
+<!-- <div>work authorization : {{onboardingForm.controls["SSN"].value}}</div> -->
 
     <label *ngIf="onboardingForm.controls['workAuth'].value ==='Other'">What is your work authorization? Please specify<br>
     <input type="text" name="workAuthOther" formControlName="workAuthOther"><br><br>
@@ -133,10 +137,28 @@
 <div formArrayName="emergencyContacts">
 <h3>Emergency Contacts</h3>
 <button (click)="addEmergencyContact()">Add Emergency Contact</button>
-    <div *ngFor="let emergencyContact of onboardingForm.controls['emergencyContacts']; let i = index">
-        <label>
-            
-        </label>
+
+<!-- <div> ec: {{onboardingForm.controls['emergencyContacts'].value}}</div> -->
+
+    <div *ngFor="let emergencyContact of emergencyContacts.controls; let i = index">
+        <div [formGroupName]="i">
+            <div>First Name</div>
+            <input type = "text" formControlName="emergencyContactFirstName">
+            <div>Last Name</div>
+            <input type = "text" formControlName="emergencyContactLastName">
+            <div>Middle Name</div>
+            <input type = "text" formControlName="emergencyContactMiddleName">
+            <div>Phone</div>
+            <input type = "text" formControlName="emergencyContactPhone">
+            <div>Email</div>
+            <input type = "text" formControlName="emergencyContactEmail">
+            <div>Relationship</div>
+            <input type = "text" formControlName="emergencyContactRelationship">
+            <button (click)="removeEmergencyContacts(i)">Delete</button>
+        </div>
+        
+        
+        
     </div>
 </div>
 
